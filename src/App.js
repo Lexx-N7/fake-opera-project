@@ -1,25 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import About from "./components/About";
+import Banners from "./components/Banners";
+import Carousel from "./components/Carousel";
+import AltBanner from "./components/AltBanner";
+import MobBanner from "./components/MobBanner";
+import OperaItems from "./components/OperaItems";
+import Browsing from './components/Browsing'
+import Community from './components/Community'
+import Reviews from './components/Reviews'
+import DownloadBanner from './components/DownloadBanner'
+import Footer from './components/Footer'
+
+let checkOS =(os)=>{
+  return window.navigator.appVersion.indexOf(os)
+}
+let os;
+if(checkOS('Windows') !== -1){
+  os = 'windows'
+}else if(checkOS("Linux") !== -1){
+  os = 'linux'
+} else {
+  console.log('your system sucks')
+}
+export {os};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <Header/>
+      <About />
+      <Banners />
+      <Carousel />
+      <AltBanner />
+      <MobBanner />
+      <OperaItems />
+      <Browsing/>
+      <Community/>
+      <Reviews/>
+      <DownloadBanner/>
+      <Footer/>
+    </>
   );
 }
 
